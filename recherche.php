@@ -33,31 +33,20 @@ if($nbLignes ==0)
 
 ?>
 
-<?php /*
+<?php 
 if ($nbLignes >=1)
 {
 $jeu = $verification->fetch()
     ?>
     
         <div class="row">
-            <label for="fabricant">Fabricant: </label><input type="text" name="fabricant" id="fabricant"
-            value=<?php echo $voiture['Fabricant'] ?>>
-        </div>
-        <div class="form-row">
-            <label for="modele">Modèle: </label><input type="text" name="modele" id="modele" 
-            value=<?php echo $voiture['Modele'] ?>> 
-        </div>
-        <div class="form-row">
-            <label for="couleur">Couleur: </label><input type="text" name="couleur" id="couleur"
-            value=<?php echo $voiture['Couleur'] ?>>
-        </div>
-        <div class="form-row">
-            <label for="prix">Prix: </label><input type="text" name="prix" id="prix"
-            value=<?php echo $voiture['Prix'] ?>>
+            <?php
+            echo $jeu['nom'];
+            ?>
         </div>
 
 <?php
-}*/
+}
 ?>
 
 <?php
