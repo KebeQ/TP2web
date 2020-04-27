@@ -1,5 +1,5 @@
 <?php
-require 'tables/client.class.php';
+require 'tables/produit.class.php';
 ?>
 
 <!DOCTYPE html>
