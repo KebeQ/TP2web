@@ -6,7 +6,7 @@ require 'tables/client.class.php';
 <html lang="en">
 <?php 
 require_once 'includes/connexion.php';
-require 'includes/headEtCSS.php';
+require_once 'includes/headEtCSS.php';
 ?>
 <body class="text-center">
         <div class="row">
