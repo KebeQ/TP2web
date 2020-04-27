@@ -93,7 +93,7 @@ class Client {
            public function setLogin($login){
             if ($login == '' || $login == ' ')
               {
-               trigger_error('Il faut insérer un !');
+               trigger_error('Il faut insérer un login!');
               return;
               }
           
@@ -113,7 +113,7 @@ class Client {
            public function setEmail($email){
             if ($email == '' || $email == ' ')
               {
-               trigger_error('Il faut insérer un !');
+               trigger_error('Il faut insérer un email!');
               return;
               }
           
