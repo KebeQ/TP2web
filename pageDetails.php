@@ -1,5 +1,5 @@
 <?php
-require 'client.class.php';
+require 'produit.class.php';
 ?>
 
 <!DOCTYPE html>
