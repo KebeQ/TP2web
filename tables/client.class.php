@@ -8,11 +8,11 @@ class Client {
     private $ville;
     private $province;
     private $codePostal;
-    private $login;
+    private $loginClient;
     private $motPasse;
     private $email;
 
-    public function __construct($nom, $prenom, $adresse, $ville, $province, $codePostal, $login, $motPasse, $email)
+    public function __construct($nom, $prenom, $adresse, $ville, $province, $codePostal, $loginClient, $motPasse, $email)
     {
         $this->setNom($nom);
         $this->setPrenom($prenom);
@@ -20,7 +20,7 @@ class Client {
         $this->setVille($ville);
         $this->setProvince($province);
         $this->setCodePostal($codePostal);
-        $this->setLogin($login);
+        $this->setLogin($loginClient);
         $this->setMotDePasse($motPasse);
         $this->setEmail($email);
 
@@ -90,14 +90,14 @@ class Client {
            $this->codePostal = $codePostal;
            } 
 
-           public function setLogin($login){
-            if ($login == '' || $login == ' ')
+           public function setLogin($loginClient){
+            if ($loginClient == '' || $loginClient == ' ')
               {
                trigger_error('Il faut insérer un login!');
               return;
               }
           
-           $this->login = $login;
+           $this->loginClient = $loginClient;
            }  
 
            public function setMotDePasse($motPasse){
@@ -157,7 +157,7 @@ class Client {
 
     public function getLogin()
     {
-    return $this->login;
+    return $this->loginClient;
     }
 
     public function getMotDePasse()
