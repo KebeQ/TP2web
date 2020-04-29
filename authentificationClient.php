@@ -12,7 +12,7 @@ require_once 'tables/clientDAO.class.php';
 require_once 'includes/formulaireClient.php';
 ?>
 <div class="jumbotron">
-   <form method="post" action="client.class.php"> <?php //action="catalogue.php"? ?>
+   <form method="post" action="catalogue.php">
         <div class="form-row">
             <div class="col-md-4">
             <label for="nomClient">Nom: </label><input type="text" name="nomClient" id="nomClient" required>
@@ -25,6 +25,7 @@ require_once 'includes/formulaireClient.php';
             <input type="text" name="adresseClient" id="adresseClient" placeholder="Ex: 51 Rue Déziel" required>
             </div>
         </div>
+
         <br />
         <div class="form-row">
             <div class="col-md-4">
@@ -40,6 +41,7 @@ require_once 'includes/formulaireClient.php';
             <input type="text" name="codePostal" id="codePostal" placeholder="Ex: G6V 3T7" required pattern="[A-Z][0-9][A-Z] [0-9][A-Z][0-9]"> 
             </div>
         </div>
+        
         <br />
         <div class="form-row">
         <div class="col-md-3">
