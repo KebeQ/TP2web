@@ -7,7 +7,17 @@ require 'tables/produit.class.php';
 <?php 
 require_once 'includes/connexion.php';
 require_once 'includes/headEtCSS.php';
+require_once 'tables/clientDAO.class.php';
+
 ?>
+<?php 
+     $management = new ClientDAO($conn);
+
+     $client = new Client($_POST['nomClient'], 
+     $_POST['prenomClient'], $_POST['adresseClient'], $_POST['villeClient'], $_POST['provinceClient'], 
+     $_POST['codePostal'], $_POST['login'], $_POST['motDePasse'], $_POST['emailClient']);
+    ?>
+
 <body class="text-center">
         <div class="row">
          <div class="logo"><img src="img/logoSite.PNG" width="75" height="75"></div>
