@@ -81,7 +81,8 @@ class Client {
         }
 
         public function setCodePostal($codePostal){
-            if ($codePostal != '/^[A-Z][0-9][A-Z] [0-9][A-Z][0-9]$/')
+            $expRegCodePostal = "/^[A-Z][0-9][A-Z] [0-9][A-Z][0-9]$/";
+            if (!preg_match($expRegCodePostal, $codePostal))           
               {
                trigger_error('Il faut insérer un code postal valide!');
               return;
