@@ -55,7 +55,8 @@ class ClientDAO {
 
     public function update(Client $clientReçu)
     {
-        $req = $this->baseD->prepare('UPDATE client SET nom= :nom, anneeNaissance= :anneeNaissance, solde= :solde WHERE id = :id');
+        $req = $this->baseD->prepare('UPDATE client SET nom= :nom, prenom= :prenom, adresse= :adresse, 
+        ville= :ville, province= :province, codePostal= :codePostal, motPasse= :motPasse, email=:email WHERE no = :no');
 
         $req->bindValue(':nom', $clientReçu->getNom(), PDO::PARAM_STR);
         $req->bindValue(':prenom', $clientReçu->getPrenom(), PDO::PARAM_STR);
