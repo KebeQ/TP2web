@@ -31,6 +31,9 @@ require_once 'tables/clientDAO.class.php';
           <input type="submit" value="Rechercher">
         </div>
   </form>
+       <div class="client">
+  <a href="modificationClient.php">Aller au profile</a>
+  </div>
   <br />
         <div class="row">
           <div class="col-md-4">
