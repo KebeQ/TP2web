@@ -4,3 +4,8 @@ background-image: linear-gradient(125deg,#614385, #516395);
 background-repeat:no-repeat;
 background-size:cover;
 }
+
+div.client{
+    text-align: right;
+    color: black;
+}
