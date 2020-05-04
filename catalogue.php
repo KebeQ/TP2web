@@ -17,6 +17,8 @@ require_once 'tables/clientDAO.class.php';
      $client = new Client($_POST['nomClient'], 
      $_POST['prenomClient'], $_POST['adresseClient'], $_POST['villeClient'], $_POST['provinceClient'], 
      $_POST['codePostal'], $_POST['login'], $_POST['motDePasse'], $_POST['emailClient']);
+
+     $management->add($client);
     ?>
 
 <body class="text-center">
@@ -31,7 +33,7 @@ require_once 'tables/clientDAO.class.php';
           <input type="submit" value="Rechercher">
         </div>
   </form>
-       <div class="client">
+  <div class="client">
   <a href="modificationClient.php">Aller au profile</a>
   </div>
   <br />
