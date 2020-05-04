@@ -12,7 +12,7 @@ require_once 'tables/clientDAO.class.php';
 require_once 'includes/formulaireClient.php';
 ?>
 <div class="jumbotron">
-   <form method="post" action="modificationClient.php">
+   <form method="post" action="clientDAO.class.php"> !*Je suis incertain si nous devons mettre modificationClient.php ou cela, alors j'essayes celui ci.
         <div class="form-row">
             <div class="col-md-4">
             <label for="nomClientModification">Nom: </label><input type="text" name="nomClientModification" id="nomClientModification"
