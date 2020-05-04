@@ -19,7 +19,7 @@ class ClientDAO {
 
     public function add(Client $clientReçu)
     {
-        $req = $this->baseD->prepare('INSERT INTO client (nom, prenom, adresse, ville, province, codePostal, loginClient, motPasse, email) VALUES (:nom, :prenom, :adresse, :ville, :province, :codePostal, :loginClient, :motPasse, :email)');
+        $req = $this->baseD->prepare('INSERT INTO clients (nom, prenom, adresse, ville, province, codePostal, login, motPasse, email) VALUES (:nom, :prenom, :adresse, :ville, :province, :codePostal, :login, :motPasse, :email)');
 
         $req->bindValue(':nom', $clientReçu->getNom(), PDO::PARAM_STR);
         $req->bindValue(':prenom', $clientReçu->getPrenom(), PDO::PARAM_STR);
@@ -39,7 +39,7 @@ class ClientDAO {
     public function get($no)
  {
      $no = (int) $no;
-     $req = $this->baseD->prepare('SELECT no, nom, prenom, adresse, ville, province, codePostal, loginClient, motPasse, email FROM client WHERE no=:no');
+     $req = $this->baseD->prepare('SELECT no, nom, prenom, adresse, ville, province, codePostal, login, motPasse, email FROM clients WHERE no=:no');
      $req->bindValue(':no', $no, PDO::PARAM_INT);
 
      $req->execute();
@@ -55,7 +55,7 @@ class ClientDAO {
 
     public function update(Client $clientReçu)
     {
-        $req = $this->baseD->prepare('UPDATE client SET nom= :nom, prenom= :prenom, adresse= :adresse, 
+        $req = $this->baseD->prepare('UPDATE clients SET nom= :nom, prenom= :prenom, adresse= :adresse, 
         ville= :ville, province= :province, codePostal= :codePostal, motPasse= :motPasse, email=:email WHERE no = :no');
 
         $req->bindValue(':nom', $clientReçu->getNom(), PDO::PARAM_STR);
