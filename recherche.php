@@ -8,7 +8,8 @@
 <body>
 <a href="catalogue.php">Retour au catalogue</a>
 <?php
-require_once('includes/connexion.php');
+require_once 'includes/connexion.php';
+
 ?>
 <?php
 try {
@@ -34,7 +35,7 @@ if($nbLignes ==0)
 ?>
 
 <?php 
-if ($nbLignes >=1)
+if ($nbLignes >=1/* ||$_GET['nom']==$jeu['nom']*/)
 {
 $jeu = $verification->fetch()
     ?>
