@@ -1,3 +1,16 @@
+<?php 
+session_start();
+
+$_SESSION['nomClient'] = $_POST['nomClient'];
+$_SESSION['prenomClient'] = $_POST['prenomClient'];
+$_SESSION['adresseClient'] = $_POST['adresseClient'];
+$_SESSION['villeClient'] = $_POST['villeClient'];
+$_SESSION['provinceClient'] = $_POST['provinceClient'];
+$_SESSION['codePostal'] = $_POST['codePostal'];
+$_SESSION['login'] = $_POST['login'];
+$_SESSION['motDePasse'] = $_POST['motDePasse'];
+$_SESSION['emailClient'] = $_POST['emailClient'];
+?>
 <?php
 require 'tables/produit.class.php';
 ?>
@@ -14,11 +27,12 @@ require_once 'tables/clientDAO.class.php';
 <?php 
      $management = new ClientDAO($conn);
 
-     $client = new Client($_POST['nomClient'], 
-     $_POST['prenomClient'], $_POST['adresseClient'], $_POST['villeClient'], $_POST['provinceClient'], 
-     $_POST['codePostal'], $_POST['login'], $_POST['motDePasse'], $_POST['emailClient']);
+     $client = new Client($_SESSION['nomClient'], 
+     $_SESSION['prenomClient'], $_SESSION['adresseClient'], $_SESSION['villeClient'], $_SESSION['provinceClient'], 
+     $_SESSION['codePostal'], $_SESSION['login'], $_SESSION['motDePasse'], $_SESSION['emailClient']);
 
      $management->add($client);
+     $management->update($client);
     ?>
 
 <body class="text-center">
@@ -30,7 +44,7 @@ require_once 'tables/clientDAO.class.php';
         <form method="get" action="recherche.php">
         <div class="form-row">
           <input type="text" name="nom" id="nom" required> 
-          <input type="submit" value="Rechercher">
+          <input type="submit" name="rechercheJeu" value="Rechercher">
         </div>
   </form>
   <div class="client">
