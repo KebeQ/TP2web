@@ -34,7 +34,7 @@ require_once 'tables/clientDAO.class.php';
         <form method="get" action="recherche.php">
         <div class="form-row">
           <input type="text" name="nom" id="nom" required> 
-          <input type="submit" value="Rechercher">
+         <input type="submit" name="rechercheJeu" value="Rechercher">
         </div>
   </form>
   <div class="client">
