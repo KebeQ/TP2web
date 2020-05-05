@@ -7,18 +7,49 @@ class Produit {
     private $prix;
     private $qte;
     private $dateParution;
-    private $image;
 
-    public function __construct($no, $nom, $description, $prix, $qte, $dateParution, $image)
+    public function __construct($no, $nom, $description, $prix, $qte, $dateParution)
     {
-        $this->setNom($no);
-        $this->setAnneeNaissance($nom);
-        $this->setSolde($description);
-        $this->setNom($prix);
-        $this->setAnneeNaissance($qte);
-        $this->setSolde($dateParution);
-        $this->setNom($image);
+        $this->setNom($nom);
+        $this->setDescription($description);
+        $this->setPrix($prix);
+        $this->setQte($qte);
+        $this->setDate($dateParution);
+    }
 
+    public function setNom($nom) {
+        $this->nom = $nom;        
+    }
+    public function getNom() {
+        return $this->nom;
+    }
+
+    public function setDescription($description) {
+        $this->description = $description;
+    }
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function setPrix($prix) {
+        $this->prix = $prix;
+    }
+    public function getPrix() {
+        return $this->prix;
+    }
+
+    public function setQte($qte) {
+        $this->qte = $qte;
+    }
+    public function getQte() {
+        return $this->qte;
+    }
+
+    public function setDate($dateParution) {
+        $this->dateParution = $dateParution;
+    }
+    public function getDate() {
+        return $this->dateParution;
     }
 }
 
