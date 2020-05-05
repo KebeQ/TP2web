@@ -1,3 +1,7 @@
+<?php
+session_start();
+$rechercheJeu = $_GET['rechercheJeu'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +16,11 @@ require_once 'includes/connexion.php';
 
 ?>
 <?php
+
 try {
-    $verification = $conn->prepare('SELECT nom, description, prix, qte, dateParution, image FROM produits WHERE nom = :nom');
+    $verification = $conn->prepare("SELECT nom FROM produits WHERE nom = :nom AND nom LIKE '%".$rechercheJeu."%'");
     $verification->bindValue(':nom', $_GET['nom'], PDO::PARAM_STR);
     $verification->execute();
-
 }
 
 catch (PDOException $e) { 
@@ -35,9 +39,9 @@ if($nbLignes ==0)
 ?>
 
 <?php 
-if ($nbLignes >=1/* ||$_GET['nom']==$jeu['nom']*/)
+if ($nbLignes >=1)
 {
-$jeu = $verification->fetch()
+$jeu = $verification->fetch();
     ?>
     
         <div class="row">
