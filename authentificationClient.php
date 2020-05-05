@@ -69,6 +69,14 @@ require_once 'includes/formulaireClient.php';
 		<input type="submit" value="Créer nouveau compte">
     </form>
    </div>
+   <?php 
+     $management = new ClientDAO($conn);
 
+     $client = new Client($_SESSION['nomClient'], 
+     $_SESSION['prenomClient'], $_SESSION['adresseClient'], $_SESSION['villeClient'], $_SESSION['provinceClient'], 
+     $_SESSION['codePostal'], $_SESSION['login'], $_SESSION['motDePasse'], $_SESSION['emailClient']);
+
+     $management->add($client);
+    ?>
 </body>
 </html>
