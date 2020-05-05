@@ -17,23 +17,13 @@ require 'tables/produit.class.php';
 
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
 <script src="js/catalogue.js"></script> 
 <?php 
 require_once 'includes/connexion.php';
 require_once 'includes/headEtCSS.php';
 require_once 'tables/clientDAO.class.php';
-
 ?>
-<?php 
-     $management = new ClientDAO($conn);
-
-     $client = new Client($_SESSION['nomClient'], 
-     $_SESSION['prenomClient'], $_SESSION['adresseClient'], $_SESSION['villeClient'], $_SESSION['provinceClient'], 
-     $_SESSION['codePostal'], $_SESSION['login'], $_SESSION['motDePasse'], $_SESSION['emailClient']);
-
-     $management->add($client);
-     $management->update($client);
-    ?>
 
 <body class="text-center">
         <div class="row">
@@ -44,7 +34,7 @@ require_once 'tables/clientDAO.class.php';
         <form method="get" action="recherche.php">
         <div class="form-row">
           <input type="text" name="nom" id="nom" required> 
-          <input type="submit" name="rechercheJeu" value="Rechercher">
+          <input type="submit" value="Rechercher">
         </div>
   </form>
   <div class="client">
@@ -54,25 +44,40 @@ require_once 'tables/clientDAO.class.php';
         <div class="row">
           <div class="col-md-4">
            <div class="jumbotron">
-            <h4>Garfield Kart: Furious Racing</h4>
-            <img src="img/Garfield.png" width="100" height="150">
-          <p>Garfield, the famous lasagna-loving cat is back to take...</p>
+            <?php
+              $sql = "SELECT no, nom, description FROM produits WHERE no = 1";
+              foreach ($conn->query($sql) as $row) {
+                echo "<strong>". $row ['nom'] ."</strong>"."<br>";  
+                echo $row['description'] ."<br>";
+              }          
+            ?>       
+            <img src="img/Garfield.png" width="100" height="150">       
             <p><a href="pageDetails.php" class="btn btn-info btn-sm" value='1' id="1" onclick="pageDetailsValue(this.id)">Voir</a></p>
            </div>
           </div>
           <div class="col-md-4">
             <div class="jumbotron">
-            <h4>Mordhau</h4>
-            <img src="img/Mordhau.jpg" width="100" height="150">
-          <p>MORDHAU est un slasher multijoueur à la première et troisième personne basée au Moyen-age.</p>
+            <?php
+              $sql = "SELECT no, nom, description FROM produits WHERE no = 2";
+              foreach ($conn->query($sql) as $row) {
+                echo "<strong>". $row ['nom'] ."</strong>"."<br>"; 
+                echo $row['description'] ."<br>";
+              }  
+            ?>        
+            <img src="img/Mordhau.jpg" width="100" height="150">          
             <p><a href="pageDetails.php" class="btn btn-info btn-sm" value='2' id="2" onclick="pageDetailsValue(this.id)">Voir</a></p>
             </div>
           </div>
           <div class="col-md-4">
            <div class="jumbotron">
-            <h4>Call of Duty 4: Modern Warfare</h4>
+           <?php
+              $sql = "SELECT no, nom, description FROM produits WHERE no = 3";
+              foreach ($conn->query($sql) as $row) {
+                echo "<strong>". $row ['nom'] ."</strong>"."<br>"; 
+                echo $row['description'] ."<br>";
+              }  
+            ?>     
             <img src="img/CallofDuty.jpg" width="100" height="150">
-          <p>Call of Duty 4: Modern Warfare est un jeu vidéo de tir à la première personne développé...</p>
             <p><a href="pageDetails.php" class="btn btn-info btn-sm" value='3' id="3" onclick="pageDetailsValue(this.id)">Voir</a></p>
            </div>
           </div>
@@ -81,28 +86,44 @@ require_once 'tables/clientDAO.class.php';
         <div class="row">
           <div class="col-md-4">
            <div class="jumbotron">
-            <h4>Halo: Reach</h4>
+           <?php
+              $sql = "SELECT no, nom, description FROM produits WHERE no = 4";
+              foreach ($conn->query($sql) as $row) {
+                echo "<strong>". $row ['nom'] ."</strong>"."<br>"; 
+                echo $row['description'] ."<br>";
+              }  
+            ?>     
             <img src="img/Halo.png" width="100" height="150">
-          <p>Halo: Reach est un jeu vidéo de tir à la première personne (FPS) développé par Bungie et...</p>
             <p><a href="pageDetails.php" class="btn btn-info btn-sm" value='4' id="4" onclick="pageDetailsValue(this.id)">Voir</a></p>
            </div>
           </div>
           <div class="col-md-4">
             <div class="jumbotron">
-            <h4>Red Dead Redemption 2</h4>
+            <?php
+              $sql = "SELECT no, nom, description FROM produits WHERE no = 5";
+              foreach ($conn->query($sql) as $row) {
+                echo "<strong>". $row ['nom'] ."</strong>"."<br>"; 
+                echo $row['description'] ."<br>";
+              }  
+            ?>     
             <img src="img/RedDead.png" width="200" height="150">
-          <p>Amérique, 1899. L'ère de l'ouest sauvage touche à sa fin.</p>
             <p><a href="pageDetails.php" class="btn btn-info btn-sm" value='5' id="5" onclick="pageDetailsValue(this.id)">Voir</a></p>
             </div>
           </div>
           <div class="col-md-4">
            <div class="jumbotron">
-            <h4>Minecraft</h4>
+           <?php
+              $sql = "SELECT no, nom, description FROM produits WHERE no = 6";
+              foreach ($conn->query($sql) as $row) {
+                echo "<strong>". $row ['nom'] ."</strong>"."<br>"; 
+                echo $row['description'] ."<br>";
+              }  
+            ?>     
             <img src="img/Minecraft.jpg" width="100" height="150">
-          <p>Minecraft est un jeu vidéo de type "bac à sable" (construction complètement libre) développé...</p>
             <p><a href="pageDetails.php" class="btn btn-info btn-sm" value='6' id="5" onclick="pageDetailsValue(this.id)">Voir</a></p>
            </div>
           </div>
         </div>  
 </body>
 </html>
+
