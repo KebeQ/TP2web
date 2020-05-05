@@ -44,8 +44,11 @@ $jeu = $verification->fetch();
     ?>
     
         <div class="row">
-            <?php
-            echo $jeu['nom'];
+           <?php
+            echo "<strong>"."Nom : "."</strong>" . $jeu['nom'] ."<br>"; 
+            echo "<strong>"."Description : "."</strong>" . $jeu['description'] ."<br>";
+            echo "<strong>"."Prix : "."</strong>" . $jeu['prix'] ."$" ."<br>";
+            echo "<strong>"."Quantité : "."</strong>" . $jeu['qte'] ." " ."Exemplaires" ."<br>";
             ?>
         </div>
 
