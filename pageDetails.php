@@ -22,10 +22,10 @@ require_once 'includes/connexion.php';
         <?php
             $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 1";
             foreach ($conn->query($sql) as $row) {
-                echo $row['nom'] ."<br>"; 
-                echo $row['description'] ."<br>";
-                echo $row['prix'] ."$" ."<br>";
-                echo $row['qte'] ." " ."Exemplaires" ."<br>";
+                echo "Nom : " . $row['nom'] ."<br>"; 
+                echo "Description : " . $row['description'] ."<br>";
+                echo "Prix : " . $row['prix'] ."$" ."<br>";
+                echo "Quantité : " . $row['qte'] ." " ."Exemplaires" ."<br>";
             }          
         ?>
     </div>
@@ -35,10 +35,10 @@ require_once 'includes/connexion.php';
         <?php
             $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 2";
             foreach ($conn->query($sql) as $row) {
-                echo $row['nom'] ."<br>"; 
-                echo $row['description'] ."<br>";
-                echo $row['prix'] ."$" ."<br>";
-                echo $row['qte'] ." " ."Exemplaires" ."<br>";
+                echo "Nom : " . $row['nom'] ."<br>"; 
+                echo "Description : " . $row['description'] ."<br>";
+                echo "Prix : " . $row['prix'] ."$" ."<br>";
+                echo "Quantité : " . $row['qte'] ." " ."Exemplaires" ."<br>";
             }          
         ?>
     </div>
@@ -48,10 +48,10 @@ require_once 'includes/connexion.php';
         <?php
             $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 3";
             foreach ($conn->query($sql) as $row) {
-                echo $row['nom'] ."<br>"; 
-                echo $row['description'] ."<br>";
-                echo $row['prix'] ."$" ."<br>";
-                echo $row['qte'] ." " ."Exemplaires" ."<br>";
+                echo "Nom : " . $row['nom'] ."<br>"; 
+                echo "Description : " . $row['description'] ."<br>";
+                echo "Prix : " . $row['prix'] ."$" ."<br>";
+                echo "Quantité : " . $row['qte'] ." " ."Exemplaires" ."<br>";
             }          
         ?>
     </div>
@@ -61,10 +61,10 @@ require_once 'includes/connexion.php';
         <?php
             $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 3";
             foreach ($conn->query($sql) as $row) {
-                echo $row['nom'] ."<br>"; 
-                echo $row['description'] ."<br>";
-                echo $row['prix'] ."$" ."<br>";
-                echo $row['qte'] ." " ."Exemplaires" ."<br>";
+                echo "Nom : " . $row['nom'] ."<br>"; 
+                echo "Description : " . $row['description'] ."<br>";
+                echo "Prix : " . $row['prix'] ."$" ."<br>";
+                echo "Quantité : " . $row['qte'] ." " ."Exemplaires" ."<br>";
             }          
         ?>
     </div>
@@ -74,10 +74,10 @@ require_once 'includes/connexion.php';
         <?php
             $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 3";
             foreach ($conn->query($sql) as $row) {
-                echo $row['nom'] ."<br>"; 
-                echo $row['description'] ."<br>";
-                echo $row['prix'] ."$" ."<br>";
-                echo $row['qte'] ." " ."Exemplaires" ."<br>";
+                echo "Nom : " . $row['nom'] ."<br>"; 
+                echo "Description : " . $row['description'] ."<br>";
+                echo "Prix : " . $row['prix'] ."$" ."<br>";
+                echo "Quantité : " . $row['qte'] ." " ."Exemplaires" ."<br>";
             }          
         ?>
     </div>
@@ -87,10 +87,10 @@ require_once 'includes/connexion.php';
         <?php
             $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 3";
             foreach ($conn->query($sql) as $row) {
-                echo $row['nom'] ."<br>"; 
-                echo $row['description'] ."<br>";
-                echo $row['prix'] ."$" ."<br>";
-                echo $row['qte'] ." " ."Exemplaires" ."<br>";
+                echo "Nom : " . $row['nom'] ."<br>"; 
+                echo "Description : " . $row['description'] ."<br>";
+                echo "Prix : " . $row['prix'] ."$" ."<br>";
+                echo "Quantité : " . $row['qte'] ." " ."Exemplaires" ."<br>";
             }          
         ?>
     </div>
