@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -16,15 +15,18 @@ require_once 'includes/connexion.php';
 require_once 'tables/clientDAO.class.php';
 require_once 'includes/formulaireClient.php';
 ?>
+
 <div class="jumbotron">
-   <form method="post" action="clientDAO.class.php">
+   <form method="POST">
         <div class="form-row">
             <div class="col-md-4">
-            <label for="nomClientModification">Nom: </label><input type="text" name="nomClientModification" id="nomClientModification"
+            <label for="nomClient">Nom: </label>
+            <input type="text" name="nomClient" id="nomClient"
             value=<?php echo $_SESSION['nomClient'] ?>> 
             </div>
             <div class="col-md-4">
-            <label for="prenomClientModification">Prénom: </label><input type="text" name="prenomClientModification" id="prenomClientModification"
+            <label for="prenomClient">Prénom: </label>
+            <input type="text" name="prenomClient" id="prenomClient"
             value=<?php echo $_SESSION['prenomClient'] ?>> 
             </div>
             <div class="col-md-4">
@@ -56,6 +58,12 @@ require_once 'includes/formulaireClient.php';
         <br />
         <div class="form-row">
          <div class="col-md-4">
+            <label for="loginModification">Login: </label>
+            <input type="text" name="loginModification" id="loginModification"
+            value=<?php echo $_SESSION['login'] ?>> 
+         </div>
+        <div class="form-row">
+         <div class="col-md-4">
             <label for="motDePasseModification">Mot de Passe: </label>
             <input type="password" name="motDePasseModification" id="motDePasseModification"
             value=<?php echo $_SESSION['motDePasse'] ?>> 
@@ -76,9 +84,21 @@ require_once 'includes/formulaireClient.php';
             </div>
            </div>
           </div>
-		<br />
-		<input type="submit" value="Approuvé les modifications">
+		  <br />
+		  <input type="submit" name="updateClient" value="Approuvé les modifications">
     </form>
 </div>
+
 </body>
+
+<?php 
+     $management = new ClientDAO($conn);
+
+     $client = new Client($_SESSION['nomClient'], 
+     $_SESSION['prenomClient'], $_SESSION['adresseClient'], $_SESSION['villeClient'], $_SESSION['provinceClient'], 
+     $_SESSION['codePostal'], $_SESSION['login'], $_SESSION['motDePasse'], $_SESSION['emailClient']);
+
+     $management->update($client);
+?>
+
 </html>
