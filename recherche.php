@@ -1,6 +1,5 @@
 <?php
 session_start();
-$rechercheJeu = $_GET['rechercheJeu'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +17,8 @@ require_once 'includes/connexion.php';
 <?php
 
 try {
-    $verification = $conn->prepare("SELECT nom FROM produits WHERE nom = :nom AND nom LIKE '%".$rechercheJeu."%'");
-    $verification->bindValue(':nom', $_GET['nom'], PDO::PARAM_STR);
+    $verification = $conn->prepare('SELECT nom FROM produits WHERE nom LIKE :nom');
+    $verification->bindValue(':nom', '%'.$_GET['nom'].'%', PDO::PARAM_STR);
     $verification->execute();
 }
 
