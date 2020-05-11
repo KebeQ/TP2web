@@ -12,7 +12,7 @@ session_start();
 <body>
 <?php
 require_once 'includes/connexion.php';
-require_once 'tables/clientDAO.class.php';
+require_once 'classes/clientDAO.class.php';
 require_once 'includes/formulaireClient.php';
 ?>
 
