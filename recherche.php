@@ -40,6 +40,8 @@ if($nbLignes ==0)
 <?php 
 if ($nbLignes >=1)
 {
+while ($nbLignes !=0) //Besoin de fixer
+    {
 $jeu = $verification->fetch();
     ?>
     
@@ -53,6 +55,7 @@ $jeu = $verification->fetch();
         </div>
 
 <?php
+}
 }
 ?>
 
