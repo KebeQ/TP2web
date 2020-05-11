@@ -95,6 +95,7 @@ require_once 'includes/connexion.php';
             }        
         ?>
     </div>
+    <a href="panier.php" class="btn btn-info btn-sm"><img src="img/panier.png" width="20" height="20">Ajouter au panier</a>
 </body>
 
 </html>
