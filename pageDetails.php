@@ -1,5 +1,5 @@
 <?php
-require 'tables/produit.class.php';
+require 'classes/produit.class.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,6 +8,7 @@ require 'tables/produit.class.php';
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style/pageDetails.css">
+<link rel="stylesheet" href="style/bootstrap.css">
 <script src="js/pageDetails.js"></script> 
 <title>TP2</title>
 </head>
