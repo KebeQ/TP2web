@@ -12,7 +12,7 @@ $_SESSION['motDePasse'] = $_POST['motDePasse'];
 $_SESSION['emailClient'] = $_POST['emailClient'];
 ?>
 <?php
-require 'tables/produit.class.php';
+require 'classes/produit.class.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ require 'tables/produit.class.php';
 <?php 
 require_once 'includes/connexion.php';
 require_once 'includes/headEtCSS.php';
-require_once 'tables/clientDAO.class.php';
+require_once 'classes/clientDAO.class.php';
 ?>
 
 <body class="text-center">
