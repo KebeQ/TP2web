@@ -9,6 +9,9 @@
 <body>
 <?php
 //Re-regarder la vidéo; Possibilité que ceci se passe dans un array.
+
+//De plus, apparemment, le panier est le plus difficile alors il faudra s'en occuper. De plus, l'inventaire est notre classe 
+//produit dans la base de donnée. 
 ?>
 </body>
 
