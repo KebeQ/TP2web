@@ -8,6 +8,9 @@ $_SESSION['adresseClient'] = $_POST['adresseClient'];
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Facture</title>
+<?php
+require_once 'classes/commande.class.php'; //ou items_commande.class.php
+?>
 </head>
 <body>
 <h1 class="text-center">Facture</h1>
