@@ -9,3 +9,8 @@ div.client{
     text-align: right;
     color: black;
 }
+
+div.panier{
+    text-align: left;
+    color: black;
+}
