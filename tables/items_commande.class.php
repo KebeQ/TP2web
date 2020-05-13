@@ -1,19 +1,16 @@
 <?php
 
-class Commande {
-    private $no;
-    private $date;
-    private $statut;
-    private $typePaiement;
-    private $noClient;
+class Items_Commande {
+    private $noCommande;
+    private $noProduit;
+    private $qte;
 
-    public function __construct($no, $date, $statut, $typePaiement, $noClient)
+    public function __construct($noCommande, $date, $noProduit)
     {
-        $this->setNom($no);
-        $this->setAnneeNaissance($date);
-        $this->setNom($statut);
-        $this->setAnneeNaissance($typePaiement);
-        $this->setSolde($noClient);
+        $this->setNom($noCommande);
+        $this->setAnneeNaissance($noProduit);
+        $this->setNom($qte);
+
 
     }
 }
