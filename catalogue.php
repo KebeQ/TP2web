@@ -25,6 +25,16 @@ require_once 'includes/headEtCSS.php';
 require_once 'classes/clientDAO.class.php';
 ?>
 
+<?php 
+     $management = new ClientDAO($conn);
+
+     $client = new Client($_SESSION['nomClient'], 
+     $_SESSION['prenomClient'], $_SESSION['adresseClient'], $_SESSION['villeClient'], $_SESSION['provinceClient'], 
+     $_SESSION['codePostal'], $_SESSION['login'], $_SESSION['motDePasse'], $_SESSION['emailClient']);
+
+     $management->add($client);
+    ?>
+
 <body class="text-center">
         <div class="row">
          <div class="logo"><img src="img/logoSite.PNG" width="75" height="75"></div>
@@ -37,6 +47,9 @@ require_once 'classes/clientDAO.class.php';
          <input type="submit" value="Rechercher">
         </div>
   </form>
+  <div class="panier">
+  <a href="panier.php"><img src="img/panier.png" width="20" height="20">Aller au panier</a>
+  </div>
   <div class="client">
   <a href="modificationClient.php">Aller au profile</a>
   </div>
