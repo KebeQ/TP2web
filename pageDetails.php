@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <?php
 require 'classes/produit.class.php';
 ?>
@@ -60,7 +63,7 @@ require_once 'includes/connexion.php';
     <div id="jeux4">
         <img src="img/Halo.png" width="100" height="150"> <br>
         <?php
-            $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 3";
+            $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 4";
             foreach ($conn->query($sql) as $row) {
                 echo "<strong>"."Nom : "."</strong>" . $row['nom'] ."<br>"; 
                 echo "<strong>"."Description : "."</strong>" . $row['description'] ."<br>";
@@ -73,7 +76,7 @@ require_once 'includes/connexion.php';
     <div id="jeux5">
         <img src="img/RedDead.png" width="200" height="150"> <br>
         <?php
-            $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 3";
+            $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 5";
             foreach ($conn->query($sql) as $row) {
                 echo "<strong>"."Nom : "."</strong>" . $row['nom'] ."<br>"; 
                 echo "<strong>"."Description : "."</strong>" . $row['description'] ."<br>";
@@ -86,7 +89,7 @@ require_once 'includes/connexion.php';
     <div id="jeux6">
         <img src="img/Minecraft.jpg" width="100" height="150"> <br>
         <?php
-            $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 3";
+            $sql = "SELECT no, nom, description, prix, qte, dateParution FROM produits WHERE no = 6";
             foreach ($conn->query($sql) as $row) {
                 echo "<strong>"."Nom : "."</strong>" . $row['nom'] ."<br>"; 
                 echo "<strong>"."Description : "."</strong>" . $row['description'] ."<br>";
@@ -96,6 +99,7 @@ require_once 'includes/connexion.php';
         ?>
     </div>
     <a href="panier.php" class="btn btn-info btn-sm"><img src="img/panier.png" width="20" height="20">Ajouter au panier</a>
+
 </body>
 
 </html>
