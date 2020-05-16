@@ -22,6 +22,8 @@ $_SESSION['qte'] = $enStock;
 //produit dans la base de donnée. 
 //Aussi la quantité initiale est toujours 1
 //Aussi, le panier et la facture sont pareille selon la prof dans la vidéo et on a seulement besoin de copier collé (je crois)
+
+//Array_push pour la première fois qu'un objet est ajouté au panier; 
 ?>
 </body>
 
