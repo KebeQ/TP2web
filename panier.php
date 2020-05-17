@@ -19,8 +19,8 @@ require 'classes/produit.class.php';
 <title>Panier</title>
 </head>
 <body>
+<h1> PANIER </h1>
 <?php
-
 //Re-regarder la vidéo (la session et le array et tout se passe environ vers 23:10 et suite)
 //De plus, apparemment, le panier est le plus difficile alors il faudra s'en occuper. De plus, l'inventaire est notre classe 
 //produit dans la base de donnée. 
@@ -28,11 +28,17 @@ require 'classes/produit.class.php';
 //Aussi, le panier et la facture sont pareille selon la prof dans la vidéo et on a seulement besoin de copier collé (je crois)
 
 //Array_push pour la première fois qu'un objet est ajouté au panier; Besoin de if après
-if (){
+if (ITEM-EST-AJOUTÉ-CODE){
+?>
+<div class="row">
+<div class="col-12">
+<?php
     array_push($produits, $no);
     array_push($enStock, 1);
 }
 ?>
+</div>
+</div>
 </body>
 
 </html>
