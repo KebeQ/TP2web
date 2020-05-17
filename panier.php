@@ -8,6 +8,9 @@ array_push($enStock,  $qte);
 $_SESSION['qte'] = $enStock;
 
 ?>
+<?php 
+require 'classes/produit.class.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +20,7 @@ $_SESSION['qte'] = $enStock;
 </head>
 <body>
 <?php
+
 //Re-regarder la vidéo (la session et le array et tout se passe environ vers 23:10 et suite)
 //De plus, apparemment, le panier est le plus difficile alors il faudra s'en occuper. De plus, l'inventaire est notre classe 
 //produit dans la base de donnée. 
@@ -24,6 +28,10 @@ $_SESSION['qte'] = $enStock;
 //Aussi, le panier et la facture sont pareille selon la prof dans la vidéo et on a seulement besoin de copier collé (je crois)
 
 //Array_push pour la première fois qu'un objet est ajouté au panier; Besoin de if après
+if (){
+    array_push($produits, $no);
+    array_push($enStock, 1);
+}
 ?>
 </body>
 
