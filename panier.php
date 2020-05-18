@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $produits= array();
 array_push($produits,  $no);
 $_SESSION['no'] = $produits;
@@ -10,6 +11,7 @@ $_SESSION['qte'] = $enStock;
 ?>
 <?php 
 require 'classes/produit.class.php';
+require 'classes/commandeDAO.class.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +21,9 @@ require 'classes/produit.class.php';
 <title>Panier</title>
 </head>
 <body>
-<h1> PANIER </h1>
+<h1> PANIER</h1>
 <?php
+
 //Re-regarder la vidéo (la session et le array et tout se passe environ vers 23:10 et suite)
 //De plus, apparemment, le panier est le plus difficile alors il faudra s'en occuper. De plus, l'inventaire est notre classe 
 //produit dans la base de donnée. 
@@ -33,6 +36,7 @@ if (ITEM-EST-AJOUTÉ-CODE){
 <div class="row">
 <div class="col-12">
 <?php
+
     array_push($produits, $no);
     array_push($enStock, 1);
 }
