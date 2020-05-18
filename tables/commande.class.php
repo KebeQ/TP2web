@@ -25,7 +25,7 @@ class Commande {
     }
 
     public function setDate($date) {
-        $this->date = $date;        
+        $this->date = date('d/m/Y');        
     }
     public function getDate() {
         return $this->date;
