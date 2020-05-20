@@ -5,18 +5,10 @@ class Items_Commande {
     private $noProduit;
     private $qte;
 
-    public function __construct($noCommande, $date, $noProduit)
+    public function __construct($date, $noProduit)
     {
-        $this->setNoCommande($noCommande);
         $this->setNoProduit($noProduit);
         $this->setQuantite($qte);
-    }
-
-    public function setNoCommande($noCommande) {
-        $this->noCommande = $noCommande;        
-    }
-    public function getNoCommande() {
-        return $this->noCommande;
     }
 
     public function setNoProduit($noProduit) {
