@@ -40,12 +40,12 @@ class CommandeDAO {
      $req->execute();
 
      $ligne = $req->fetch(PDO::FETCH_ASSOC);
-     $uneCommande = new Commande($ligne['date'], $ligne['statut'], $ligne['typePaiement'], $ligne['noClient']);
+     $commandeItem = new Commande($ligne['date'], $ligne['statut'], $ligne['typePaiement'], $ligne['noClient']);
 
-     $uneCommande->setNo($no);
+     $commandeItem->setNo($no);
      $req->closeCursor();
 
-     return $uneCommande;
+     return $commandeItem;
  }
 
     public function update(Commande $commandeLoaded)
@@ -64,6 +64,34 @@ class CommandeDAO {
         $req->closeCursor();
     }
 
+    public function addItem(Items_Commande $items)
+    {
+        $req = $this->bd->prepare('INSERT INTO items_commande (noProduit, qte) VALUES (:noProduit, :qte)');
+
+        $req->bindValue(':noProduit', $items->getNoProduit(), PDO::PARAM_INT);
+        $req->bindValue(':qte', $items->getQuantite(), PDO::PARAM_INT);
+
+        $req->execute();
+
+        $req->closeCursor();
+    }
+
+    public function get($noCommande)
+    {
+        $noCommande = (int) $noCommande;
+        $req = $this->bd->prepare('SELECT noCommande, noProduit, qte FROM items_commande WHERE noCommande=:noCommande');
+        $req->bindValue(':noCommande', $noCommande, PDO::PARAM_INT);
+   
+        $req->execute();
+   
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        $commandeItem = new Items_Commande($ligne['noCommande'], $ligne['noProduit'], $ligne['qte']);
+   
+        $commandeItem->setNoCommande($noCommande);
+        $req->closeCursor();
+   
+        return $commandeItem;
+    }
 
 }
 ?>
