@@ -2,8 +2,8 @@
 session_start();
 
 $produits= array();
-array_push($produits,  $no);
-$_SESSION['no'] = $produits;
+array_push($produits,  $noProduit);
+$_SESSION['noProduit'] = $produits;
 $enStock= array();
 array_push($enStock,  $qte);
 $_SESSION['qte'] = $enStock;
@@ -12,6 +12,7 @@ $_SESSION['qte'] = $enStock;
 <?php 
 require 'classes/produit.class.php';
 require 'classes/commandeDAO.class.php';
+require_once 'includes/connexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,7 @@ require 'classes/commandeDAO.class.php';
 <body>
 <h1> PANIER</h1>
 <?php
+$management = new CommandeDAO($conn);
 
 //Re-regarder la vidéo (la session et le array et tout se passe environ vers 23:10 et suite)
 //De plus, apparemment, le panier est le plus difficile alors il faudra s'en occuper. De plus, l'inventaire est notre classe 
@@ -37,8 +39,10 @@ if (ITEM-EST-AJOUTÉ-CODE){
 <div class="col-12">
 <?php
 
-    array_push($produits, $no);
+    array_push($produits, $noProduit);
     array_push($enStock, 1);
+    $itemAjout = new Items_Commande($_SESSION['noProduit'], $_SESSION['qte']);
+    $management->addItem($itemAjout);
 }
 ?>
 </div>
