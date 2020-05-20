@@ -1,6 +1,7 @@
 <?php
 
 require_once "commande.class.php";
+require_once "items_commande.class.php";
 
 class CommandeDAO {
 
@@ -76,7 +77,7 @@ class CommandeDAO {
         $req->closeCursor();
     }
 
-    public function get($noCommande)
+    public function getItem($noCommande)
     {
         $noCommande = (int) $noCommande;
         $req = $this->bd->prepare('SELECT noCommande, noProduit, qte FROM items_commande WHERE noCommande=:noCommande');
