@@ -5,8 +5,7 @@ class Items_Commande {
     private $noProduit;
     private $qte;
 
-    public function __construct($date, $noProduit)
-    {
+    public function __construct($qte, $noProduit) {
         $this->setNoProduit($noProduit);
         $this->setQuantite($qte);
     }
@@ -14,22 +13,22 @@ class Items_Commande {
     public function setNoProduit($noProduit) {
         $this->noProduit = $noProduit;        
     }
+
     public function getNoProduit() {
         return $this->noProduit;
     }
 
     public function setQuantite($qte) {
-        if ($qte == 0)
-            {
+        if ($qte == 0) {
             trigger_error('Désolé, ce produit est indisponible');
             return;
-
+        }
 
         $this->qte = $qte;        
     }
+
     public function getQuantite() {
         return $this->qte;
     }
 }
-
 ?>
