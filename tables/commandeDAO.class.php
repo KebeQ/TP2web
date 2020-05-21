@@ -18,7 +18,7 @@ class CommandeDAO {
     $this->bd = $bd;
     }
 
-    public function add(Commande $commandeLoaded)
+    public function add($date, $statut, $typePaiement, $noClient)
     {
         $req = $this->bd->prepare('INSERT INTO commandes (date, statut, typePaiement, noClient) VALUES (:date, :statut, :typePaiement :noClient)');
 
@@ -49,7 +49,7 @@ class CommandeDAO {
      return $commandeItem;
  }
 
-    public function update(Commande $commandeLoaded)
+    public function update($date, $statut, $typePaiement, $noClient)
     {
         $req = $this->bd->prepare('UPDATE commandes SET date= :date, statut= :statut, typePaiement= :typePaiement, 
         noClient= :noClient WHERE no = :no');
@@ -65,7 +65,7 @@ class CommandeDAO {
         $req->closeCursor();
     }
 
-    public function addItem(Items_Commande $items)
+    public function addItem($noProduit, $qte)
     {
         $req = $this->bd->prepare('INSERT INTO items_commande (noProduit, qte) VALUES (:noProduit, :qte)');
 
