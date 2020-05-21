@@ -9,7 +9,8 @@ $_SESSION['adresseClient'] = $_POST['adresseClient'];
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Facture</title>
 <?php
-require_once 'tables/commande.class.php'; //ou items_commande.class.php
+require_once 'classes/commande.class.php'; 
+require_once 'items_commande.class.php';
 ?>
 </head>
 <body>
@@ -18,7 +19,7 @@ require_once 'tables/commande.class.php'; //ou items_commande.class.php
     <div class="row">
           <div class="col-md-4">
            <?php
-           echo $_Session['adresseClient'];
+           echo $_SESSION['adresseClient'];
            ?>
           </div>
           </div>
@@ -26,7 +27,12 @@ require_once 'tables/commande.class.php'; //ou items_commande.class.php
           <div class="row">
           <div class="col-md-12">
           <?php
-          //echo item
+          $management = new CommandeDAO($conn);
+          
+          if (isset($_SESSION['noProduit']) && isset($_SESSION['qte'])){
+            array_push($produits, $noProduit);
+            array_push($enStock, $qte);
+            }
           ?>
           </div>
           </div>
