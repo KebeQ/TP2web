@@ -9,7 +9,7 @@ $_SESSION['adresseClient'] = $_POST['adresseClient'];
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Facture</title>
 <?php
-require_once 'classes/commande.class.php'; //ou items_commande.class.php
+require_once 'tables/commande.class.php'; //ou items_commande.class.php
 ?>
 </head>
 <body>
