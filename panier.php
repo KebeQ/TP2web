@@ -1,6 +1,6 @@
 <?php
 session_start();
-$noProduit=
+$noProduit= $_SESSION['noProduitTrouve'];
 $qte=1;
 
 $produits= array();
@@ -12,9 +12,9 @@ $_SESSION['qte'] = $enStock;
 
 ?>
 <?php 
-require 'tables/produit.class.php';
-require 'tables/commandeDAO.class.php';
-require_once 'includes/connexion.php';
+require 'classes/produit.class.php';
+require 'classes/commandeDAO.class.php';
+require 'includes/connexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,13 +28,6 @@ require_once 'includes/connexion.php';
 <?php
 $management = new CommandeDAO($conn);
 
-//Re-regarder la vidéo (la session et le array et tout se passe environ vers 23:10 et suite)
-//De plus, apparemment, le panier est le plus difficile alors il faudra s'en occuper. De plus, l'inventaire est notre classe 
-//produit dans la base de donnée. 
-//Aussi la quantité initiale est toujours 1
-//Aussi, le panier et la facture sont pareille selon la prof dans la vidéo et on a seulement besoin de copier collé (je crois)
-
-//Array_push pour la première fois qu'un objet est ajouté au panier; Besoin de if après
 if (isset($_SESSION['noProduit']) && isset($_SESSION['qte'])){
 ?>
 <div class="row">
@@ -43,8 +36,7 @@ if (isset($_SESSION['noProduit']) && isset($_SESSION['qte'])){
 
     array_push($produits, $noProduit);
     array_push($enStock, $qte);
-    $itemAjout = new CommandeDAO($_SESSION['noProduit'], $_SESSION['qte']);
-    $management->addItem($itemAjout);
+    $management->addItem($noProduit, $qte);
 }
 ?>
 </div>
