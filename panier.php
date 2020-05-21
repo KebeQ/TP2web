@@ -12,8 +12,8 @@ $_SESSION['qte'] = $enStock;
 
 ?>
 <?php 
-require 'classes/produit.class.php';
-require 'classes/commandeDAO.class.php';
+require 'tables/produit.class.php';
+require 'tables/commandeDAO.class.php';
 require_once 'includes/connexion.php';
 ?>
 <!DOCTYPE html>
